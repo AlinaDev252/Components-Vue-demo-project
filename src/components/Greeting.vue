@@ -1,10 +1,12 @@
 <template>
-	<p>{{ msg }}</p>
+	<p v-if=" age > 25">{{ msg }}</p>
+  <p v-else>You must be 25 years or older to view this message</p>
 </template>
 
 <script>
 export default {
 	name: "Greeting",
+  props: ["age"],
 	data() {
 		return {
 			msg: "Hello World!",
@@ -13,8 +15,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scope lang="scss">
+$color: red;
+
 p {
-	color: red;
+	color: $color;
 }
 </style>
